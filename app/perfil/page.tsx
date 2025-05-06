@@ -35,6 +35,7 @@ export default function PerfilPage() {
     puntosGanados: 520,
     contenedoresVisitados: 15,
     diasConsecutivos: 8,
+    co2: 0.5,
   }
 
   const actividades = [
@@ -234,6 +235,15 @@ export default function PerfilPage() {
             <CardContent className="p-4 pt-0">
               <div className="text-2xl font-bold">{estadisticas.diasConsecutivos}</div>
               <p className="text-xs text-muted-foreground">días consecutivos</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="p-4 pb-2">
+              <CardTitle className="text-sm text-muted-foreground">Huella de carbono</CardTitle>
+            </CardHeader>
+            <CardContent className="p-4 pt-0">
+              <div className="text-2xl font-bold">{estadisticas.co2}</div>
+              <p className="text-xs text-muted-foreground">Co2</p>
             </CardContent>
           </Card>
         </div>
