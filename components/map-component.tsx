@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+"use client"
+import { use, useEffect, useRef, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
