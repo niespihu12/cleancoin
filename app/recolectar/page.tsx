@@ -30,7 +30,7 @@ export default function RecolectarPage() {
   const handleTakePhoto = () => {
     // Simulación de toma de foto
     setPhotoTaken(true)
-    setPhotoUrl("/placeholder.svg?height=300&width=400&text=Foto+de+Evidencia")
+    setPhotoUrl("/la-persona-está-arrojando-una-botella-de-plástico-papelera-el-concepto-eliminación-residuos-y-importancia-del-reciclado-313407958.webp")
     toast({
       title: "Foto Capturada",
       description: "Evidencia registrada correctamente",

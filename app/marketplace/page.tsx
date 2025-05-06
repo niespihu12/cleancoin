@@ -13,7 +13,7 @@ export default function MarketplacePage() {
       nombre: "Bolsa Ecológica",
       descripcion: "Bolsa reutilizable hecha de materiales reciclados",
       precio: 150,
-      imagen: "/placeholder.svg?height=200&width=200&text=Bolsa+Ecológica",
+      imagen: "/WhatsApp Image 2025-05-06 at 9.40.36 AM (1).jpeg",
       vendedor: "EcoTienda",
       categoria: "accesorios",
     },
@@ -22,7 +22,7 @@ export default function MarketplacePage() {
       nombre: "Cuaderno Reciclado",
       descripcion: "Cuaderno hecho con papel 100% reciclado",
       precio: 100,
-      imagen: "/placeholder.svg?height=200&width=200&text=Cuaderno",
+      imagen: "/WhatsApp Image 2025-05-06 at 9.40.37 AM.jpeg",
       vendedor: "PapelVerde",
       categoria: "papeleria",
     },
@@ -31,7 +31,7 @@ export default function MarketplacePage() {
       nombre: "Botella Reutilizable",
       descripcion: "Botella de acero inoxidable para reducir plásticos de un solo uso",
       precio: 200,
-      imagen: "/placeholder.svg?height=200&width=200&text=Botella",
+      imagen: "/WhatsApp Image 2025-05-06 at 9.40.36 AM.jpeg",
       vendedor: "ZeroWaste",
       categoria: "accesorios",
     },
@@ -40,7 +40,7 @@ export default function MarketplacePage() {
       nombre: "Maceta Biodegradable",
       descripcion: "Maceta hecha de materiales compostables para tus plantas",
       precio: 80,
-      imagen: "/placeholder.svg?height=200&width=200&text=Maceta",
+      imagen: "/WhatsApp Image 2025-05-06 at 9.40.35 AM (1).jpeg",
       vendedor: "PlantaVida",
       categoria: "hogar",
     },
@@ -49,7 +49,7 @@ export default function MarketplacePage() {
       nombre: "Jabón Artesanal",
       descripcion: "Jabón natural hecho con ingredientes orgánicos",
       precio: 50,
-      imagen: "/placeholder.svg?height=200&width=200&text=Jabón",
+      imagen: "/images.jpeg",
       vendedor: "NaturalSoap",
       categoria: "hogar",
     },
@@ -58,7 +58,7 @@ export default function MarketplacePage() {
       nombre: "Cepillo de Bambú",
       descripcion: "Cepillo de dientes biodegradable con mango de bambú",
       precio: 70,
-      imagen: "/placeholder.svg?height=200&width=200&text=Cepillo",
+      imagen: "/WhatsApp Image 2025-05-06 at 9.40.35 AM.jpeg",
       vendedor: "EcoDental",
       categoria: "cuidado-personal",
     },
@@ -163,15 +163,15 @@ export default function MarketplacePage() {
             </Select>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 z-0">
             {productos.map((producto) => (
               <Card key={producto.id} className="overflow-hidden">
-                <div className="relative aspect-square">
+                <div className="relative aspect-square ">
                   <Image
                     src={producto.imagen || "/placeholder.svg"}
                     alt={producto.nombre}
                     fill
-                    className="object-cover"
+                    className="object-cover z-[0] transition-transform duration-300 hover:scale-105"
                   />
                   <Button variant="ghost" size="icon" className="absolute top-2 right-2 bg-background/80 rounded-full">
                     <Heart className="h-4 w-4" />
