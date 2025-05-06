@@ -63,11 +63,11 @@ export default function MapComponent({ userLocation, contenedores, isLoading }: 
   const mapCenter = userLocation || santaMartaPosition;
 
   return (
-    <div className="h-96 w-full rounded-lg overflow-hidden border border-gray-200">
+    <div className="h-96 w-full rounded-lg z-auto border border-gray-200 ">
       <MapContainer
         center={[mapCenter.lat, mapCenter.lng]}
         zoom={13}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%" , zIndex: 0}}
         whenReady={() => console.log("Mapa cargado correctamente")}
       >
         <TileLayer
