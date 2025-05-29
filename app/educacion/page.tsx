@@ -25,7 +25,7 @@ export default function EducacionPage() {
         {
           id: "reduccion-plasticos",
           titulo: "Reducción de Plásticos",
-          descripcion: "Estrategias para reducir el consumo de plásticos de un solo uso en tu vida diaria.",
+          descripcion: "Reducir el uso de plásticos de un solo uso no solo es una acción responsable con el medio ambiente. ",
           duracion: "15 min",
           completado: false,
           imagen: "/Reducción-de-plásticos-2.webp",
@@ -48,7 +48,7 @@ export default function EducacionPage() {
         {
           id: "impacto-papel",
           titulo: "Impacto Ambiental",
-          descripcion: "Conoce el impacto de la producción de papel y los beneficios de su reciclaje.",
+          descripcion: "Conoce el impacto de la producción de papel y los beneficios de su reciclaje en santa marta.",
           duracion: "12 min",
           completado: false,
           imagen: "/images03.jpeg",

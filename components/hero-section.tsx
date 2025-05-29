@@ -29,21 +29,6 @@ export default function HeroSection() {
             </div>
             <div className="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="rounded-full overflow-hidden border-2 border-white dark:border-background h-8 w-8">
-                      <Image
-                        src={`/placeholder.svg?height=32&width=32&text=U${i}`}
-                        alt={`Usuario ${i}`}
-                        width={32}
-                        height={32}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <span>+2,500 usuarios activos</span>
-              </div>
-              <div className="flex items-center gap-2">
                 <div className="flex">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">

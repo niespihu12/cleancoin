@@ -7,6 +7,7 @@ const DynamicMapComponent = dynamic(() => import("@/components/map-component"), 
 
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -75,10 +76,10 @@ export default function MapaPage() {
           <h1 className="text-3xl font-bold tracking-tight">Mapa de Contenedores</h1>
           <p className="text-muted-foreground">Encuentra contenedores cercanos para depositar tus residuos</p>
         </div>
-        <Button onClick={handleScanQR}>
+        <Link href='/recolectar' className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" >
           <QrCode className="mr-2 h-4 w-4" />
           Escanear QR
-        </Button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

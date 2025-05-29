@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Image src="/WhatsApp Image 2025-05-05 at 10.04.15 PM.jpeg" alt="CleanCoin Logo" width={32} height={32} />
+              <Image src="/WhatsApp_Image_2025-05-28_at_3.56.55_PM-removebg-preview (1).png" alt="CleanCoin Logo" width={32} height={32} className="mix-blend-multiply" />
               <span className="font-bold text-xl">CleanCoin</span>
             </div>
             <p className="text-sm text-muted-foreground">

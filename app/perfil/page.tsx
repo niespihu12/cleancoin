@@ -182,9 +182,7 @@ export default function PerfilPage() {
                     Recolectar
                   </Link>
                 </Button>
-                <Button variant="outline" size="icon">
-                  <Settings className="h-4 w-4" />
-                </Button>
+                
               </div>
             </div>
           </CardContent>
