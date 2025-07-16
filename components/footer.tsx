@@ -9,8 +9,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Image src="/WhatsApp_Image_2025-05-28_at_3.56.55_PM-removebg-preview (1).png" alt="CleanCoin Logo" width={32} height={32} className="mix-blend-multiply" />
-              <span className="font-bold text-xl">CleanCoin</span>
+              
+
+              <Image src="/logo-cleanpoints.png" alt="CleanPoints Logo" width={32} height={32} className="mix-blend-multiply" />
+              <span className="font-bold text-xl">CleanPoints</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Educando para un manejo adecuado de residuos sólidos y promoviendo un planeta más limpio.
@@ -91,7 +93,7 @@ export default function Footer() {
         </div>
         <div className="mt-8 border-t pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} CleanCoin. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} CleanPoints. Todos los derechos reservados.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="/terminos" className="text-xs text-muted-foreground hover:text-primary">

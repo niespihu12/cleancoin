@@ -158,12 +158,12 @@ export default function PerfilPage() {
                   <Badge variant="outline" className="flex items-center px-3 py-1">
                     <Image
                       src="/placeholder.svg?height=16&width=16&text=$"
-                      alt="CleanCoin"
+                      alt="CleanPoints"
                       width={16}
                       height={16}
                       className="mr-1"
                     />
-                    <span>{usuario.puntos} CleanCoins</span>
+                    <span>{usuario.puntos} CleanPointss</span>
                   </Badge>
                   <Badge variant="outline" className="flex items-center px-3 py-1">
                     <Calendar className="mr-1 h-3 w-3" />
@@ -214,7 +214,7 @@ export default function PerfilPage() {
             </CardHeader>
             <CardContent className="p-4 pt-0">
               <div className="text-2xl font-bold">{estadisticas.puntosGanados}</div>
-              <p className="text-xs text-muted-foreground">CleanCoins</p>
+              <p className="text-xs text-muted-foreground">CleanPointss</p>
             </CardContent>
           </Card>
           <Card>
@@ -276,7 +276,7 @@ export default function PerfilPage() {
                           <Badge className="flex items-center">
                             <Image
                               src="/placeholder.svg?height=16&width=16&text=$"
-                              alt="CleanCoin"
+                              alt="CleanPoints"
                               width={16}
                               height={16}
                               className="mr-1"

@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "CleanCoin - Manejo de Residuos",
+  title: "CleanPoints - Manejo de Residuos",
   description: "Aplicación educativa para el manejo adecuado de residuos sólidos",
     generator: 'v0.dev'
 }

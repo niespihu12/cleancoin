@@ -41,7 +41,7 @@ export default function RecolectarPage() {
     // Simulación de envío de evidencia
     toast({
       title: "¡Felicidades!",
-      description: "Has ganado 50 CleanCoins por tu contribución",
+      description: "Has ganado 50 CleanPointss por tu contribución",
       variant: "success",
     })
     setActiveStep(3)
@@ -59,7 +59,7 @@ export default function RecolectarPage() {
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Recolectar Residuos</h1>
-          <p className="text-muted-foreground">Escanea, deposita y gana CleanCoins</p>
+          <p className="text-muted-foreground">Escanea, deposita y gana CleanPointss</p>
         </div>
       </div>
 
@@ -162,7 +162,7 @@ export default function RecolectarPage() {
                       <div className="text-center">
                         <h3 className="text-lg font-medium mb-2">¡Excelente trabajo!</h3>
                         <p className="text-muted-foreground mb-4">
-                          Tu evidencia ha sido capturada. Confirma para recibir tus CleanCoins.
+                          Tu evidencia ha sido capturada. Confirma para recibir tus CleanPointss.
                         </p>
                         <Button onClick={handleSubmitEvidence}>Confirmar y Recibir Recompensa</Button>
                       </div>
@@ -180,7 +180,7 @@ export default function RecolectarPage() {
                     <h3 className="text-xl font-medium mb-2">¡Acción Completada!</h3>
                     <p className="text-muted-foreground mb-2">Gracias por tu contribución al medio ambiente</p>
                     <div className="flex items-center justify-center gap-2 mb-6">
-                      <Image src="/placeholder.svg?height=24&width=24&text=$" alt="CleanCoin" width={24} height={24} />
+                      <Image src="/placeholder.svg?height=24&width=24&text=$" alt="CleanPoints" width={24} height={24} />
                       <span className="text-2xl font-bold">+50</span>
                     </div>
                     <div className="flex gap-2">
@@ -235,12 +235,12 @@ export default function RecolectarPage() {
                     <div className="flex items-center">
                       <Image
                         src="/placeholder.svg?height=16&width=16&text=$"
-                        alt="CleanCoin"
+                        alt="CleanPoints"
                         width={16}
                         height={16}
                         className="mr-1"
                       />
-                      <span>50 CleanCoins</span>
+                      <span>50 CleanPointss</span>
                     </div>
                   </div>
                   <div className="pt-4">

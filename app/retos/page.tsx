@@ -137,7 +137,7 @@ export default function RetosPage() {
                     <div className="flex items-center">
                       <Image
                         src="/placeholder.svg?height=16&width=16&text=$"
-                        alt="CleanCoin"
+                        alt="CleanPoints"
                         width={16}
                         height={16}
                         className="mr-1"
@@ -204,7 +204,7 @@ export default function RetosPage() {
                     <div className="flex items-center">
                       <Image
                         src="/placeholder.svg?height=16&width=16&text=$"
-                        alt="CleanCoin"
+                        alt="CleanPoints"
                         width={16}
                         height={16}
                         className="mr-1"
@@ -229,7 +229,7 @@ export default function RetosPage() {
             <CardHeader>
               <CardTitle>Invita a tus amigos</CardTitle>
               <CardDescription>
-                Gana CleanCoins adicionales por cada amigo que se una y complete su primer reto
+                Gana CleanPointss adicionales por cada amigo que se una y complete su primer reto
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -287,7 +287,7 @@ export default function RetosPage() {
                         <div className="flex items-center">
                           <Image
                             src="/placeholder.svg?height=16&width=16&text=$"
-                            alt="CleanCoin"
+                            alt="CleanPoints"
                             width={16}
                             height={16}
                             className="mr-1"

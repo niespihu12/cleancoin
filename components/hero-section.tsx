@@ -11,7 +11,7 @@ export default function HeroSection() {
           <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight leading-tight">
-                Recicla, Aprende y Gana con CleanCoin
+                Recicla, Aprende y Gana con CleanPoints
               </h1>
               <p className="max-w-xl mx-auto lg:mx-0 text-gray-600 dark:text-gray-400 text-base sm:text-lg md:text-xl">
                 Únete a la comunidad que está transformando la forma en que manejamos los residuos. Aprende, actúa y recibe recompensas por tus acciones positivas para el medio ambiente.
@@ -44,9 +44,9 @@ export default function HeroSection() {
             <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl aspect-video rounded-xl overflow-hidden h-full">
               <Image
                 src="/hero-section.jpeg"
-                alt="CleanCoin App"
+                alt="CleanPoints App"
                 fill
-                className="object-contain"
+                className="object-cover"
               />
             </div>
 

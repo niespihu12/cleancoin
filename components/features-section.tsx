@@ -22,7 +22,7 @@ export default function FeaturesSection() {
     {
       icon: <Coins className="h-10 w-10 text-yellow-500" />,
       title: "Sistema de Puntos",
-      description: "Gana CleanCoins por cada acción validada y acumula puntos para canjear por recompensas.",
+      description: "Gana CleanPointss por cada acción validada y acumula puntos para canjear por recompensas.",
     },
     {
       icon: <ShoppingBag className="h-10 w-10 text-purple-500" />,
@@ -43,7 +43,7 @@ export default function FeaturesSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Características Principales</h2>
           <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            CleanCoin ofrece una experiencia completa para fomentar el manejo adecuado de residuos sólidos.
+            CleanPoints ofrece una experiencia completa para fomentar el manejo adecuado de residuos sólidos.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">

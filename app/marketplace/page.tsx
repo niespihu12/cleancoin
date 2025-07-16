@@ -69,18 +69,18 @@ export default function MarketplacePage() {
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Marketplace</h1>
-          <p className="text-muted-foreground">Canjea tus CleanCoins por productos sostenibles</p>
+          <p className="text-muted-foreground">Canjea tus CleanPointss por productos sostenibles</p>
         </div>
         <div className="flex items-center gap-2">
           <Badge variant="outline" className="flex items-center px-3 py-1">
             <Image
               src="/placeholder.svg?height=16&width=16&text=$"
-              alt="CleanCoin"
+              alt="CleanPoints"
               width={16}
               height={16}
               className="mr-1"
             />
-            <span>250 CleanCoins disponibles</span>
+            <span>250 CleanPointss disponibles</span>
           </Badge>
         </div>
       </div>
@@ -115,9 +115,9 @@ export default function MarketplacePage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="todos">Cualquier precio</SelectItem>
-                    <SelectItem value="100">Hasta 100 CleanCoins</SelectItem>
-                    <SelectItem value="200">Hasta 200 CleanCoins</SelectItem>
-                    <SelectItem value="300">Hasta 300 CleanCoins</SelectItem>
+                    <SelectItem value="100">Hasta 100 CleanPointss</SelectItem>
+                    <SelectItem value="200">Hasta 200 CleanPointss</SelectItem>
+                    <SelectItem value="300">Hasta 300 CleanPointss</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -191,7 +191,7 @@ export default function MarketplacePage() {
                   <div className="flex items-center">
                     <Image
                       src="/placeholder.svg?height=16&width=16&text=$"
-                      alt="CleanCoin"
+                      alt="CleanPoints"
                       width={16}
                       height={16}
                       className="mr-1"

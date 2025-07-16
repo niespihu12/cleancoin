@@ -52,7 +52,7 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo-cleanpoints.png" alt="CleanCoin Logo" alt="CleanCoin Logo" width={32} height={32} />
+            <Image src="/logo-cleanpoints.png" alt="CleanPoints Logo" alt="CleanPoints Logo" width={32} height={32} />
             <span className="font-bold text-xl hidden md:inline-block">CleanPoints</span>
           </Link>
         </div>
@@ -71,7 +71,7 @@ export default function Navbar() {
             <Badge variant="outline" className="flex items-center">
               <Image
                 src="/placeholder.svg?height=16&width=16&text=$"
-                alt="CleanCoin"
+                alt="CleanPoints"
                 width={16}
                 height={16}
                 className="mr-1"

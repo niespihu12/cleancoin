@@ -42,12 +42,12 @@ export default function Home() {
                   <Badge variant="outline" className="flex items-center">
                     <Image
                       src="/placeholder.svg?height=16&width=16&text=$"
-                      alt="CleanCoin"
+                      alt="CleanPoints"
                       width={16}
                       height={16}
                       className="mr-1"
                     />
-                    50 CleanCoins
+                    50 CleanPointss
                   </Badge>
                 </div>
               </CardContent>
@@ -73,12 +73,12 @@ export default function Home() {
                   <Badge variant="outline" className="flex items-center">
                     <Image
                       src="/placeholder.svg?height=16&width=16&text=$"
-                      alt="CleanCoin"
+                      alt="CleanPoints"
                       width={16}
                       height={16}
                       className="mr-1"
                     />
-                    200 CleanCoins
+                    200 CleanPointss
                   </Badge>
                 </div>
               </CardContent>
@@ -104,12 +104,12 @@ export default function Home() {
                   <Badge variant="outline" className="flex items-center">
                     <Image
                       src="/placeholder.svg?height=16&width=16&text=$"
-                      alt="CleanCoin"
+                      alt="CleanPoints"
                       width={16}
                       height={16}
                       className="mr-1"
                     />
-                    150 CleanCoins
+                    150 CleanPointss
                   </Badge>
                 </div>
               </CardContent>
@@ -133,7 +133,7 @@ export default function Home() {
               ¡Empieza a Recolectar Ahora!
             </h2>
             <p className="max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Gana CleanCoins mientras ayudas al planeta. Encuentra contenedores cercanos y comienza tu viaje ecológico.
+              Gana CleanPointss mientras ayudas al planeta. Encuentra contenedores cercanos y comienza tu viaje ecológico.
             </p>
             <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100" asChild>
               <Link href="/recolectar">
