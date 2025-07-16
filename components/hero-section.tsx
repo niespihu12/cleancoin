@@ -40,15 +40,16 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center">
-            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl aspect-video rounded-xl overflow-hidden">
+          <div className="flex items-center justify-center h-full">
+            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl aspect-video rounded-xl overflow-hidden h-full">
               <Image
-                src="/WhatsApp Image 2025-05-05 at 10.08.04 PM.jpeg"
+                src="/hero-section.jpeg"
                 alt="CleanCoin App"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
+
           </div>
         </div>
       </div>

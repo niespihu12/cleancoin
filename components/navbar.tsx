@@ -52,8 +52,8 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/WhatsApp_Image_2025-05-28_at_3.56.55_PM-removebg-preview (1).png" alt="CleanCoin Logo" alt="CleanCoin Logo" width={32} height={32} />
-            <span className="font-bold text-xl hidden md:inline-block">CleanCoin</span>
+            <Image src="/logo-cleanpoints.png" alt="CleanCoin Logo" alt="CleanCoin Logo" width={32} height={32} />
+            <span className="font-bold text-xl hidden md:inline-block">CleanPoints</span>
           </Link>
         </div>
         <nav className="hidden lg:flex items-center gap-6">
