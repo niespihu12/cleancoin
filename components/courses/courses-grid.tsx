@@ -197,6 +197,17 @@ export const CoursesGrid: React.FC<CoursesGridProps> = ({ onCourseComplete }) =>
     }
   };
 
+  // Resuelve la URL de la imagen del curso, cubriendo casos donde el backend
+  // devuelve `imagen_url` o el campo antiguo `imagen`. Retorna una URL absoluta
+  // si es posible; si no, devuelve el placeholder.
+  const resolveImage = (c: Course) => {
+    const raw: string = (c as any).imagen_url || (c as any).imagen || '';
+    if (!raw) return '/placeholder.jpg';
+    if (/^https?:\/\//i.test(raw)) return raw;
+    const base = process.env.NEXT_PUBLIC_API_URL || '';
+    return `${base}${raw.startsWith('/') ? raw : `/${raw}`}`;
+  };
+
   if (isLoading) {
     return (
       <div className="text-center py-12">
@@ -287,11 +298,7 @@ export const CoursesGrid: React.FC<CoursesGridProps> = ({ onCourseComplete }) =>
                 onClick={() => handleCourseClick(course)}
               >
                 <div className="aspect-video relative overflow-hidden rounded-t-lg">
-                  <img
-                    src={course.imagen_url || '/placeholder.jpg'}
-                    alt={course.titulo}
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={resolveImage(course)} alt={course.titulo} className="w-full h-full object-cover" />
                   <div className="absolute top-2 right-2">
                     <Badge className={getLevelColor(course.nivel || 'principiante')}>
                       {course.nivel || 'Principiante'}

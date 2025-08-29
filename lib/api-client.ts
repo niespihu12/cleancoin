@@ -164,7 +164,16 @@ class ApiClient {
   async getCourses(skip: number = 0, limit: number = 100) {
   const data = await this.request<any[]>(`/cursos/?skip=${skip}&limit=${limit}`);
   // Normalizar campos que pueden venir con nombres distintos desde el backend
-  return data.map((c: any) => ({ ...c, imagen_url: c.imagen_url || c.imagen || '', categoria: c.categoria || c.tema || '' }))
+  return data.map((c: any) => {
+    let rawImg: string = c.imagen_url || c.imagen || '';
+
+    // Si la URL es relativa (no comienza con http), convertirla en absoluta usando baseURL
+    if (rawImg && !/^https?:\/\//i.test(rawImg)) {
+      rawImg = `${this.baseURL}${rawImg.startsWith('/') ? rawImg : `/${rawImg}`}`;
+    }
+
+    return { ...c, imagen_url: rawImg, categoria: c.categoria || c.tema || '' };
+  });
   }
 
   async getCourseById(courseId: number) {
