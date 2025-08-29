@@ -46,8 +46,10 @@ export default function AdminPage() {
   async function loadCursos() {
     try {
       setLoadingC(true)
-      const list = await cursosService.obtenerTodosLosCursos()
-      setCursos(list)
+  const list = await cursosService.obtenerTodosLosCursos()
+  // Normalizar campo de imagen: algunos registros vienen como `imagen`, otros como `imagen_url`
+    const normalized = list.map((c: any) => ({ ...c, imagen_url: c.imagen_url || c.imagen || '', categoria: c.categoria || c.tema || '' }))
+  setCursos(normalized)
     } catch (err: any) {
       setErrorC(err?.message || 'Error cargando cursos')
     } finally { setLoadingC(false) }
@@ -118,8 +120,11 @@ export default function AdminPage() {
         descripcion: nuevoCurso.descripcion,
         tema: nuevoCurso.tema,
         contenido: nuevoCurso.contenido,
-  categoria: nuevoCurso.tema || '',
-        // campos opcionales duracion/nivel/imagen se envían si existen en backend
+         categoria: nuevoCurso.tema || '',
+         // campos opcionales duracion/nivel/imagen se envían si existen en backend
+         ...(nuevoCurso.duracion_minutos !== undefined ? { duracion_minutos: Number(nuevoCurso.duracion_minutos) } : {}),
+         ...(nuevoCurso.nivel ? { nivel: nuevoCurso.nivel } : {}),
+         ...(nuevoCurso.imagen_url ? { imagen_url: nuevoCurso.imagen_url } : {}),
       }
 
       if (editingCursoId) {
@@ -139,7 +144,16 @@ export default function AdminPage() {
 
   async function handleEditarCurso(c: any) {
     setEditingCursoId(c.id)
-    setNuevoCurso({ titulo: c.titulo, descripcion: c.descripcion, categoria: c.categoria })
+    // Rellenar todos los campos del formulario para que el admin vea y pueda editar todo
+    setNuevoCurso({
+      titulo: c.titulo || '',
+      descripcion: c.descripcion || '',
+      tema: c.tema || c.categoria || '',
+      contenido: c.contenido || '',
+      duracion_minutos: c.duracion_minutos || 30,
+      nivel: c.nivel || 'principiante',
+      imagen_url: c.imagen_url || c.imagen || ''
+    })
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -282,6 +296,8 @@ export default function AdminPage() {
             <div className="mt-4">
               <Button onClick={handleCrearOActualizarCurso}>{editingCursoId ? 'Actualizar Curso' : 'Crear Curso'}</Button>
               {editingCursoId && <Button variant="outline" className="ml-2" onClick={() => { setEditingCursoId(null); setNuevoCurso({ titulo: '', descripcion: '', categoria: '' }) }}>Cancelar</Button>}
+                {editingCursoId && <Button variant="outline" className="ml-2" onClick={() => { setEditingCursoId(null); setNuevoCurso({ titulo: '', descripcion: '', tema: '', contenido: '', duracion_minutos: 30, nivel: 'principiante', imagen_url: '' }) }}>Cancelar</Button>}
+                {editingCursoId && <Button variant="outline" className="ml-2" onClick={() => { setEditingCursoId(null); setNuevoCurso({ titulo: '', descripcion: '', tema: '', contenido: '', duracion_minutos: 30, nivel: 'principiante', imagen_url: '' }) }}>Cancelar</Button>}
             </div>
           </div>
 

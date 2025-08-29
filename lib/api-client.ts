@@ -162,7 +162,9 @@ class ApiClient {
   // ===== COURSES ENDPOINTS =====
   
   async getCourses(skip: number = 0, limit: number = 100) {
-    return this.request<any[]>(`/cursos/?skip=${skip}&limit=${limit}`);
+  const data = await this.request<any[]>(`/cursos/?skip=${skip}&limit=${limit}`);
+  // Normalizar campos que pueden venir con nombres distintos desde el backend
+  return data.map((c: any) => ({ ...c, imagen_url: c.imagen_url || c.imagen || '', categoria: c.categoria || c.tema || '' }))
   }
 
   async getCourseById(courseId: number) {
