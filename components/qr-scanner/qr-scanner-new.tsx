@@ -550,12 +550,12 @@ export function QRScannerNew({ onValidationComplete }: QRScannerProps) {
           </CardHeader>
 
           <CardContent className="space-y-6">
-            {error && (
+            {/* {error && (
               <Alert variant="destructive">
                 <XCircle className="h-4 w-4" />
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
-            )}
+            )} */}
 
             {qrScannerActive ? (
               <div className="space-y-4">
