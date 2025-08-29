@@ -3,52 +3,161 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useState } from "react"
+import { useAuth } from "@/contexts/auth-context"
+import { useRouter } from "next/navigation"
+import { Loader2, AlertCircle, CheckCircle } from "lucide-react"
+import Link from "next/link"
 
 export default function RegisterForm() {
   const [nombre, setNombre] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const [passwordError, setPasswordError] = useState("")
+  
+  const { register, isLoading, error, clearError } = useAuth()
+  const router = useRouter()
 
-  const handleRegister = (e: React.FormEvent) => {
+  const validatePassword = (password: string, confirmPassword: string) => {
+    if (password.length < 6) {
+      return "La contraseña debe tener al menos 6 caracteres"
+    }
+    if (password !== confirmPassword) {
+      return "Las contraseñas no coinciden"
+    }
+    return ""
+  }
+
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Lógica de registro
-    console.log("Registrando:", { nombre, email, password })
+    clearError()
+    
+    const passwordValidation = validatePassword(password, confirmPassword)
+    if (passwordValidation) {
+      setPasswordError(passwordValidation)
+      return
+    }
+    
+    setPasswordError("")
+    
+    try {
+      await register({ nombre, email, password })
+      router.push('/perfil') // Redirigir al perfil después del registro
+    } catch (error) {
+      console.error('Error en registro:', error)
+    }
   }
 
   return (
     <div className="container flex justify-center py-12">
       <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle>Registro</CardTitle>
-          <CardDescription>Crea una cuenta para comenzar a canjear</CardDescription>
+        <CardHeader className="text-center">
+          <CardTitle className="text-2xl font-bold text-green-600">Clean Point</CardTitle>
+          <CardDescription>Crea tu cuenta para comenzar</CardDescription>
         </CardHeader>
+        
+        {error && (
+          <div className="px-6">
+            <Alert variant="destructive">
+              <AlertCircle className="h-4 w-4" />
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          </div>
+        )}
+        
+        {passwordError && (
+          <div className="px-6">
+            <Alert variant="destructive">
+              <AlertCircle className="h-4 w-4" />
+              <AlertDescription>{passwordError}</AlertDescription>
+            </Alert>
+          </div>
+        )}
+        
         <form onSubmit={handleRegister}>
           <CardContent className="space-y-4">
-            <Input
-              type="text"
-              placeholder="Nombre completo"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              required
-            />
-            <Input
-              type="email"
-              placeholder="Correo electrónico"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <Input
-              type="password"
-              placeholder="Contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <div className="space-y-2">
+              <Label htmlFor="nombre">Nombre completo</Label>
+              <Input
+                id="nombre"
+                type="text"
+                placeholder="Tu nombre completo"
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
+                required
+                disabled={isLoading}
+                className="focus:ring-green-500"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="email">Correo electrónico</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="tu@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={isLoading}
+                className="focus:ring-green-500"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="password">Contraseña</Label>
+              <Input
+                id="password"
+                type="password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                disabled={isLoading}
+                className="focus:ring-green-500"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="confirmPassword">Confirmar contraseña</Label>
+              <Input
+                id="confirmPassword"
+                type="password"
+                placeholder="••••••••"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                disabled={isLoading}
+                className="focus:ring-green-500"
+              />
+            </div>
           </CardContent>
-          <CardFooter>
-            <Button type="submit" className="w-full">Registrarse</Button>
+          
+          <CardFooter className="flex flex-col space-y-4">
+            <Button 
+              type="submit" 
+              className="w-full bg-green-600 hover:bg-green-700" 
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Creando cuenta...
+                </>
+              ) : (
+                'Crear Cuenta'
+              )}
+            </Button>
+            
+            <div className="text-center text-sm text-gray-600">
+              ¿Ya tienes cuenta?{' '}
+              <Link href="/login" className="text-green-600 hover:underline">
+                Inicia sesión aquí
+              </Link>
+            </div>
           </CardFooter>
         </form>
       </Card>
