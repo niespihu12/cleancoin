@@ -202,7 +202,7 @@ export const CoursesGrid: React.FC<CoursesGridProps> = ({ onCourseComplete }) =>
   // si es posible; si no, devuelve el placeholder.
   const resolveImage = (c: Course) => {
     const raw: string = (c as any).imagen_url || (c as any).imagen || '';
-    if (!raw) return '/placeholder.jpg';
+    if (!raw) return 'https://assets.grok.com/anon-users/cab1b483-a2ad-4aa9-8aa6-3ebeb211c283/generated/5eac2aef-dedd-47db-a98b-54697b209280/image.jpg';
     if (/^https?:\/\//i.test(raw)) return raw;
     const base = process.env.NEXT_PUBLIC_API_URL || '';
     return `${base}${raw.startsWith('/') ? raw : `/${raw}`}`;
