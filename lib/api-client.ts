@@ -1,6 +1,6 @@
 // Cliente API centralizado para Clean Point
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000';
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://back-cleanpoint.onrender.com').replace(/\/$/, '');
 
 // Types for QR validation
 interface QRValidateRequest {
@@ -40,7 +40,7 @@ class ApiClient {
     endpoint: string,
     options: RequestInit = {}
   ): Promise<T> {
-    const url = `${this.baseURL}${endpoint}`;
+  const url = `${this.baseURL}${endpoint.startsWith('/') ? endpoint : `/${endpoint}`}`;
     
     // Agregar headers de autenticación si existe token
     const token = this.getAuthToken();

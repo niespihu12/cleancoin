@@ -1,6 +1,6 @@
 // services/cursosService.ts
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000';
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://back-cleanpoint.onrender.com').replace(/\/$/, '');
 
 export interface Curso {
   id: number;
@@ -19,7 +19,7 @@ export interface CursoCreate {
 class CursosService {
   async obtenerTodosLosCursos(skip: number = 0, limit: number = 100): Promise<Curso[]> {
     try {
-      const response = await fetch(`${API_BASE_URL}/cursos/?skip=${skip}&limit=${limit}`, {
+  const response = await fetch(`${API_BASE_URL}${'/cursos/?skip=' + skip + '&limit=' + limit}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ class CursosService {
 
   async obtenerCursoPorId(cursoId: number): Promise<Curso> {
     try {
-      const response = await fetch(`${API_BASE_URL}/cursos/${cursoId}`, {
+  const response = await fetch(`${API_BASE_URL}${'/cursos/' + cursoId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ class CursosService {
 
   async crearCurso(cursoData: CursoCreate): Promise<Curso> {
     try {
-      const response = await fetch(`${API_BASE_URL}/cursos`, {
+  const response = await fetch(`${API_BASE_URL}${'/cursos'}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ class CursosService {
 
   async actualizarCurso(cursoId: number, cursoData: CursoCreate): Promise<Curso> {
     try {
-      const response = await fetch(`${API_BASE_URL}/cursos/${cursoId}`, {
+  const response = await fetch(`${API_BASE_URL}${'/cursos/' + cursoId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ class CursosService {
 
   async eliminarCurso(cursoId: number): Promise<{ detail: string }> {
     try {
-      const response = await fetch(`${API_BASE_URL}/cursos/${cursoId}`, {
+  const response = await fetch(`${API_BASE_URL}${'/cursos/' + cursoId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

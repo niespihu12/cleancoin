@@ -1,6 +1,6 @@
 // services/marketService.ts
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://back-cleanpoint.onrender.com/';
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://back-cleanpoint.onrender.com').replace(/\/$/, '');
 
 export interface Producto {
   id: number;
@@ -45,7 +45,7 @@ class MarketService {
     endpoint: string,
     options: RequestInit = {}
   ): Promise<T> {
-    const url = `${API_BASE_URL}${endpoint}`;
+  const url = `${API_BASE_URL}${endpoint.startsWith('/') ? endpoint : `/${endpoint}`}`;
     
     const defaultHeaders = {
       'Content-Type': 'application/json',

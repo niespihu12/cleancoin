@@ -69,7 +69,8 @@ export function QRScannerNew({ onValidationComplete }: QRScannerProps) {
   const { user, refreshUser } = useAuth();
 
   const postToBackend = async (payload: { qr_code: string; image_data: string; user_id: number }) => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000'}/qr/validate`;
+  const base = (process.env.NEXT_PUBLIC_API_URL || 'https://back-cleanpoint.onrender.com').replace(/\/$/, '');
+  const url = `${base}${'/qr/validate'}`;
     const token = typeof window !== 'undefined' ? localStorage.getItem('cleanpoint_token') : null;
 
     const headers: HeadersInit = {
